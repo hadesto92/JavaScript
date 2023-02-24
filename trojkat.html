@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Trójkąt</title>
+        <meta charset="utf-8">
+	</head>
+	<body>
+        <form name='formularz'>
+        
+            Podaj<br>
+            promień:<input type='text' name='RR' id='r'><br>
+            wysokosc:<input type='text' name='HH' id='h'><br>
+            bok a:<input type='text' name='AA' id='A'><br>
+            bok b:<input type='text' name='BB' id='B'><br><br>
+            
+            <input type="button" value="Kula" onClick="kula()">
+            <input type="button" value="Stożek" onClick="stozek()">
+            <input type="button" value="Szczecian" onClick="szeszcian()">
+            
+        </form>        
+        
+        <script>
+                
+            function kula(){
+                if(!isNaN(parseInt(document.getElementById('r').value))){
+                    var r = document.getElementById('r').value;
+                    var pole = (4*(Math.PI)*Math.pow(r,2));
+                    var objetosc = ((4*(Math.PI)*Math.pow(r,3))/3);
+                
+                    document.getElementById('wynik').innerHTML = "Pole szescianu wynosi: "+pole.toFixed(2)+", a objetosc wynosi: "+objetosc.toFixed(2);
+                }
+                else{
+                    document.getElementById('wynik').innerHTML = "Musisz wprowadzić liczby!!!";
+                }    
+            }
+                
+            function stozek(){
+                 if(!isNaN(parseInt(document.getElementById('r').value)) && !isNaN(parseInt(document.getElementById('h').value))){
+                     
+                    var r = parseInt(document.getElementById('r').value);
+                    var h = parseInt(document.getElementById('h').value);
+                    
+                    var l = Math.sqrt(Math.pow(h,2)+Math.pow(r,2));
+                    
+                    var pole = Math.PI*r*(r+l);
+                    var objetosc = (Math.PI*Math.pow(r,2)*h)/3;
+                
+                    document.getElementById('wynik').innerHTML = "Pole szescianu wynosi: "+pole.toFixed(2)+", a objetosc wynosi: "+objetosc.toFixed(2);
+                    
+                }
+                else{
+                    document.getElementById('wynik').innerHTML = "Musisz wprowadzić liczby!!!";
+                }   
+            }
+                
+            function szeszcian(){
+                if(!isNaN(parseInt(document.getElementById('A').value))){
+                    var a = document.getElementById('A').value;
+                    var pole = 6*a*a;
+                    var objetosc = a*a*a;
+                
+                    document.getElementById('wynik').innerHTML = "Pole szescianu wynosi: "+pole+", a objetosc wynosi: "+objetosc;
+                }
+                else{
+                    document.getElementById('wynik').innerHTML = "Musisz wprowadzić liczby!!!";
+                }
+            }
+                
+        </script>
+        
+        <br><br>
+        <b><div id="wynik"></div></b>
+        
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Adresowanie</title>
+        <meta charset="utf-8">
+	</head>
+	<body>  
+    
+        <h1>Zdarzenia w JS - skalowanie obrazka</h1>
+        
+        <img id="obrazek" src="maly.jpg" onmouseover="duzy()" onmouseout="maly()" />
+        
+        <script>
+                
+            function duzy(){
+                document.getElementById("obrazek").src="duzy.jpg";
+            }
+            
+            function maly(){
+                document.getElementById("obrazek").src="maly.jpg";
+            }
+            
+        </script>
+        
+    </body>
+</html>
